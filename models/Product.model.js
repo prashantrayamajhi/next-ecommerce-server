@@ -44,6 +44,13 @@ const ProductSchema = new mongoose.Schema(
       required: true,
     },
 
+    comments: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
+
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
