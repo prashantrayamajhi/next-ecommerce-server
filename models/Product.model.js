@@ -21,11 +21,6 @@ const ProductSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    img: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     images: {
       type: [String],
       required: true,
@@ -57,11 +52,6 @@ const ProductSchema = new mongoose.Schema(
         ref: "Rating",
       },
     ],
-
-    user: {
-      type: mongoose.Types.ObjectId,
-      ref: "User",
-    },
   },
   { timestamps: true }
 );
