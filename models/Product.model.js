@@ -26,6 +26,24 @@ const ProductSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    images: {
+      type: [String],
+      required: true,
+      trim: true,
+    },
+    publicIds: {
+      type: [String],
+      required: true,
+    },
+    stock: {
+      type: Number,
+      required: true,
+    },
+    delivery: {
+      type: Boolean,
+      required: true,
+    },
+
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
