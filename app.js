@@ -11,7 +11,7 @@ app.use(express.json());
 
 // routes
 const AuthRoute = require("./routes/auth.route");
-const CategoryRoute = require("./routes/category.route");
+const CategoryRoute = require("./routes/admin/category.route");
 const ProductRoute = require("./routes/products.route");
 const ProfileRoute = require("./routes/profile.route");
 

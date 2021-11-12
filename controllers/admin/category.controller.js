@@ -1,4 +1,4 @@
-const Category = require("./../models/Category.model");
+const Category = require("../../models/Category.model");
 
 exports.getCategories = async (req, res) => {
   try {
@@ -18,6 +18,24 @@ exports.postCategory = async (req, res) => {
     const categroy = new Category({ name });
     const data = await categroy.save();
     return res.status(200).json({ data });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send({ err });
+  }
+};
+
+exports.update = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  try {
+    const isCategory = await Category.findOne({ _id: id });
+    if (!isCategory) return res.status(404).send({ err: "Category not found" });
+    const category = await Category.findByIdAndUpdate(
+      id,
+      { name },
+      { new: true }
+    );
+    return res.status(200).json({ data: category });
   } catch (err) {
     console.log(err);
     return res.status(500).send({ err });
