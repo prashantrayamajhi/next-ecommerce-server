@@ -33,7 +33,7 @@ exports.postProduct = async (req, res) => {
   if (!stock || stock.trim().length <= 0) {
     return res.status(400).send({ err: "Stock cannot be empty" });
   }
-  if (!req.files) {
+  if (!req.files || !req.files.length) {
     return res.status(400).json({ err: "Missing Images" });
   }
 
@@ -123,7 +123,7 @@ exports.updateProductById = async (req, res) => {
     if (!product) return res.status(404).send({ err: "Post not found" });
 
     if (req.files.length > 0) {
-      product.publicId.forEach(async (id) => {
+      product.publicIds.forEach(async (id) => {
         await cloudinary.v2.uploader.destroy(id);
       });
     }

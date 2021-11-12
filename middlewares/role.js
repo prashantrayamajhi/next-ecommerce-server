@@ -1,6 +1,6 @@
 // admin middleware
 exports.isAdmin = (req, res, next) => {
-  if (req.user.role === "admin") {
+  if (req.user.roles !== "admin") {
     return res.status(403).json({
       error: "You are not an admin",
     });
