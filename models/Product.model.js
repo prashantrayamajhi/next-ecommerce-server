@@ -34,11 +34,6 @@ const ProductSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    delivery: {
-      type: Boolean,
-      required: true,
-    },
-
     comments: [
       {
         type: mongoose.Types.ObjectId,
