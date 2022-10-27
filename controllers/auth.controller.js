@@ -3,14 +3,16 @@ const Token = require("../models/Token.model");
 const bcrypt = require("bcrypt");
 const {
   generateToken,
-  generateVerificationToken,
+  // generateVerificationToken,
 } = require("./../helper/generateToken");
 // const { sendVerificationToken } = require("./../helper/mail");
 
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findOne(email);
+    const user = await User.findOne().where({
+      email
+    })
     if (!user) return res.status(401).send({ err: "Invalid credentials" });
     // if (!user.isActivated)
     //   return res
