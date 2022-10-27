@@ -49,9 +49,9 @@ exports.signup = async (req, res) => {
     if (!password.trim()) {
       return res.status(400).send({ err: "Password cannot be empty" });
     }
-    if (password !== confirmPassword) {
-      return res.status(400).send({ err: "Passwords don't match" });
-    }
+    // if (password !== confirmPassword) {
+    //   return res.status(400).send({ err: "Passwords don't match" });
+    // }
 
     const emailExists = await User.findOne({ email });
     if (emailExists && !emailExists.isActivated) {
