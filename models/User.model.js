@@ -17,10 +17,10 @@ const UserSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-  isActivated: {
-    type: Boolean,
-    default: false,
-  },
+  // isActivated: {
+  //   type: Boolean,
+  //   default: false,
+  // },
   isBanned: {
     type: Boolean,
     default: false,
