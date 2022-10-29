@@ -29,7 +29,7 @@ const ProductSchema = new mongoose.Schema(
     publicIds: {
       type: [String],
       required: true,
-    },
+    }, 
     stock: {
       type: Number,
       required: true,
