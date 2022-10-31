@@ -15,7 +15,7 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   isSeller,
-  multer.array("image"),
+  multer.array("images"),
   controller.postProduct
 );
 
@@ -23,7 +23,7 @@ router.patch(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   isSeller,
-  multer.array("image"),
+  multer.array("images"),
   controller.updateProductById
 );
 

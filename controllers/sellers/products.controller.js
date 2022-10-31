@@ -27,9 +27,6 @@ exports.postProduct = async (req, res) => {
   if (!price || price.trim().length <= 0) {
     return res.status(400).send({ err: "Price cannot be empty" });
   }
-  if (!category || category.trim().length <= 0) {
-    return res.status(400).send({ err: "Category cannot be empty" });
-  }
   if (!stock || stock.trim().length <= 0) {
     return res.status(400).send({ err: "Stock cannot be empty" });
   }
@@ -87,9 +84,6 @@ exports.updateProductById = async (req, res) => {
   }
   if (!price || price.trim().length <= 0) {
     return res.status(400).send({ err: "Price cannot be empty" });
-  }
-  if (!category || category.trim().length <= 0) {
-    return res.status(400).send({ err: "Category cannot be empty" });
   }
   if (!stock || stock.trim().length <= 0) {
     return res.status(400).send({ err: "Stock cannot be empty" });
