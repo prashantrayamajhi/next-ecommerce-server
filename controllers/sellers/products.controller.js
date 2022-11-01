@@ -54,11 +54,12 @@ exports.postProduct = async (req, res) => {
     const product = new Product({
       name,
       price,
-      category,
+      // category,
       stock,
       description,
       images: imageArr,
       publicIds,
+      user: req.user.id,
     });
     const data = await product.save();
     return res.status(201).json({ data });
@@ -125,7 +126,7 @@ exports.updateProductById = async (req, res) => {
     }
     if (name) product.name = name;
     if (price) product.price = price;
-    if (category) product.category = category;
+    // if (category) product.category = category;
     if (description) product.description = description;
     if (stock) product.stock = stock;
     if (req.files.length > 0) {

@@ -10,7 +10,7 @@ exports.isAdmin = (req, res, next) => {
 
 // seller middleware
 exports.isSeller = (req, res, next) => {
-  if (req.user.roles !== "seller" || "admin") {
+  if (req.user.roles !== "seller") {
     return res.status(403).json({
       error: "You are not a seller",
     });

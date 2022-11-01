@@ -14,7 +14,12 @@ const ProductSchema = new mongoose.Schema(
     category: {
       type: mongoose.Types.ObjectId,
       ref: "Category",
-      required: true,
+      required: false,
+    },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      required: false,
     },
     description: {
       type: String,
@@ -29,7 +34,7 @@ const ProductSchema = new mongoose.Schema(
     publicIds: {
       type: [String],
       required: true,
-    }, 
+    },
     stock: {
       type: Number,
       required: true,
